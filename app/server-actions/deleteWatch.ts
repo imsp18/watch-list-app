@@ -25,7 +25,7 @@ export async function deleteWatch(formData: FormData) {
     .match({ id: watchId, user_id: user.id });
 
   if (error) {
-    console.error("Error inserting data", error);
+    console.error("Error deleting data", error);
     return;
   }
   revalidatePath("/watch-list");
