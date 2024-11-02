@@ -8,7 +8,6 @@ export async function updateWatch(formData: FormData) {
   const id = formData.get("id");
   const model = formData.get("model");
   const brand = formData.get("brand");
-  const referenceNumber = formData.get("referenceNumber");
 
   const cookieStore = cookies();
   const supabase = createServerComponentClient({ cookies: () => cookieStore });

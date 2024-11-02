@@ -21,7 +21,7 @@ export async function addWatch(formData: FormData) {
     return;
   }
 
-  const { data, error } = await supabase.from("watches").insert([
+  const { error } = await supabase.from("watches").insert([
     {
       model,
       brand,
