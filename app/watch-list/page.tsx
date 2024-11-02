@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import EditWatch from "../components/EditWatch";
-import WatchForm from "../components/WatchForm"
+import WatchForm from "../components/WatchForm";
+import { deleteWatch } from "../server-actions/deleteWatch";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 
 export default async function WatchList() {
@@ -18,7 +19,7 @@ export default async function WatchList() {
     if (error) {
         console.error('Error Fetching watches')
     }
-    
+
     return (
         <div className="min-h-screen bg-gray-900 text-gray-300">
             <div className="container mx-auto p-6 sm:p-12">
@@ -39,7 +40,7 @@ export default async function WatchList() {
                         <div key={watch.id} className="mb-4 p-4 bg-gray-800 rounded-lg shadow">
                             <h2 className="text-xl text-white mb-2">{watch.brand} - {watch.model}</h2>
                             <div className="flex space-x-2">
-                                <form action={`deleteWatch`}>
+                                <form action={deleteWatch}>
                                     <input type="hidden" name="id" value={watch.id} />
                                     <button
                                         type="submit"
