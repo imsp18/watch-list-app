@@ -4,7 +4,7 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 
-export async function addWatch(formData: any) {
+export async function addWatch(formData: FormData) {
   const model = formData.get("model");
   const brand = formData.get("brand");
   const referenceNumber = formData.get("referenceNumber");
