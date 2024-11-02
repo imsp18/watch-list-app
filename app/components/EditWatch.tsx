@@ -19,8 +19,7 @@ export default function EditWatch({ watch }: { watch: Watch }) {
         referenceNumber: watch.reference_number
     })
 
-    const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value })
-
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, [e.target.name]: e.target.value })
 
     return (
         <div>
